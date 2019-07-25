@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link rel="stylesheet" href='./styles.css'>
 </head>
 
 <body>
@@ -41,53 +41,19 @@
         </p>
       </div>
       <div class='card' style="width: 18rem;height: 15 rem;">
+        <div class='col'>
         <strong>Current Mars Weather:</strong>
         {{facts.mars_weather}}
-        <strong>Mars Facts:</strong>
-        <table border="1" class="dataframe">
-          <thead>
-            <tr style="text-align: right;">
-              <th></th>
-              <th>Mars</th>
-              <th>Earth</th>
-            </tr>
-            <tr>
-              <th>Mars - Earth Comparison</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Mass:</th>
-              <td>6.39 � 10^23 kg</td>
-              <td>5.97 � 10^24 kg</td>
-            </tr>
-            <tr>
-              <th>Moons:</th>
-              <td>2</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th>Distance from Sun:</th>
-              <td>227,943,824 km</td>
-              <td>149,598,262 km</td>
-            </tr>
-            <tr>
-              <th>Length of Year:</th>
-              <td>687 Earth days</td>
-              <td>365.24 days</td>
-            </tr>
-            <tr>
-              <th>Temperature:</th>
-              <td>-153 to 20 �C</td>
-              <td>-88 to 58�C</td>
-            </tr>
-          </tbody>
-        </table>
+        <strong>Mars Facts:</strong>  {{facts.mars_facts| safe}}
+
       </div>
     </div>
-    <h4>Mars Hemispheres <h4></h4>
+    </div>
+    <div class = 'row'>
+    <h4>Mars Hemispheres </h4>
+  </div>
+
+
     <div class= 'row'>
       <div class= 'col-4'>
           <div class="card" style="width: 25rem;">
@@ -131,7 +97,9 @@
 
 
   </div>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ from splinter import Browser
 def init_browser():
     #set up splinter to use Chrome
     executable_path = {'executable_path': 'chromedriver.exe'}
-    return Browser('chrome', **executable_path, headless=True)
+    return Browser('chrome', **executable_path, headless=False)
 
 def scrape():
     browser = init_browser()
@@ -49,10 +49,7 @@ def scrape():
     url = 'https://space-facts.com/mars/'
     table = pd.read_html(url)
     df = table[0]
-    df.set_index('Mars - Earth Comparison', inplace=True)
-    df = df.iloc[1:]
-    table = print(df)
-
+    mars_facts = df.to_html(border=0, index=False)
 
 
     #visit astrology.usgs.gov with splinter
@@ -119,7 +116,7 @@ def scrape():
     facts['nasa_news'] = nasa_news
     facts['jpl_featured_url'] = jpl_featured_url
     facts['mars_weather'] = mars_weather
-    facts['mars_facts'] = table
+    facts['mars_facts'] = mars_facts
     facts['hemisphere1_name'] = hemisphere1_name
     facts['hemisphere1_link'] = hemisphere1_link
     facts['hemisphere2_name'] = hemisphere2_name
